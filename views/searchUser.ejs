@@ -1,0 +1,28 @@
+<!-- views/index.ejs -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= title %></title>
+</head>
+
+<body>
+  <h1> <%= title %> </h1>
+  
+  <% let flag = 0; %>
+  <% if ( locals.storage ){ %>
+    <%storage.forEach( (e) => {%>
+      <%if ( e.firstName === locals.name){%>
+        <% flag = 1 %>
+        <h3> <%=name%> is present </h3>
+        <%      }%>
+      <%    } )%>
+    <%  }%>
+    
+    <% if ( !flag ){ %>
+      <h3> <%=name %> not present </h3>
+      <% } %>
+    
+    <a href="/"> GO back to home</a>
+
+</body>
+</html>
